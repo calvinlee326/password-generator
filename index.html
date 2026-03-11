@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <div class="title">
+      <h1>🔐 Password Generator</h1>
+      <p>Create a strong, random password instantly</p>
+    </div>
+
+    <!-- Password Output -->
+    <div class="password-box">
+      <textarea id="passwordDisplay" readonly rows="2" placeholder="Click Generate..."></textarea>
+      <button id="copyBtn" title="Copy to clipboard">⎙</button>
+    </div>
+    <p id="copyHint">Click password to copy</p>
+
+    <!-- Length Slider -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Length</span>
+        <span id="lengthValue">16</span>
+      </div>
+      <input type="range" id="lengthSlider" min="8" max="64" value="16">
+    </div>
+
+    <!-- Character Options -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-label">Include</span>
+      </div>
+      <div class="options-grid">
+        <label class="option-item">
+          <input type="checkbox" id="optUpper" checked>
+          <span class="option-label">Uppercase (A–Z)</span>
+        </label>
+        <label class="option-item">
+          <input type="checkbox" id="optLower" checked>
+          <span class="option-label">Lowercase (a–z)</span>
+        </label>
+        <label class="option-item">
+          <input type="checkbox" id="optNumbers" checked>
+          <span class="option-label">Numbers (0–9)</span>
+        </label>
+        <label class="option-item">
+          <input type="checkbox" id="optSymbols" checked>
+          <span class="option-label">Symbols (!@#…)</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Generate Button -->
+    <button id="generateBtn">Generate Password</button>
+
+    <!-- Strength Bar -->
+    <div class="strength-bar">
+      <span class="strength-label">Strength</span>
+      <div class="strength-segment" id="seg1"></div>
+      <div class="strength-segment" id="seg2"></div>
+      <div class="strength-segment" id="seg3"></div>
+      <div class="strength-segment" id="seg4"></div>
+      <span id="strengthText"></span>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

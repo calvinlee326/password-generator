@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Read(//private/var/folders/1v/ztby5r9s3wj_w5sbyt28y2c80000gn/T/TemporaryItems/**)",
+      "Read(//private/var/folders/1v/ztby5r9s3wj_w5sbyt28y2c80000gn/T/**)",
+      "Bash(rsync:*)",
+      "Bash(python3:*)",
+      "Bash(ditto:*)",
+      "Bash(osascript:*)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git:*)"
+    ]
+  }
+}

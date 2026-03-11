@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.title p {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.875rem;
+  margin-top: 6px;
+}
+
+/* Password display */
+.password-box {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+#passwordDisplay {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 18px 56px 18px 18px;
+  color: #a5f3fc;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  word-break: break-all;
+  min-height: 64px;
+  line-height: 1.5;
+  outline: none;
+  resize: none;
+  cursor: pointer;
+  user-select: all;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#passwordDisplay:hover {
+  border-color: rgba(165, 243, 252, 0.35);
+  background: rgba(0, 0, 0, 0.45);
+}
+
+#passwordDisplay.copied {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.07);
+  color: #4ade80;
+}
+
+#copyHint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+  height: 16px;
+}
+
+#copyBtn {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.2rem;
+  padding: 6px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+
+#copyBtn:hover {
+  color: #a5f3fc;
+  background: rgba(165, 243, 252, 0.1);
+}
+
+#copyBtn.copied {
+  color: #4ade80;
+}
+
+/* Length section */
+.section {
+  margin-bottom: 22px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+#lengthValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #a5f3fc;
+  background: rgba(165, 243, 252, 0.1);
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+#lengthSlider {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+
+#lengthSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #818cf8, #38bdf8);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.6);
+  transition: transform 0.15s;
+}
+
+#lengthSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+#lengthSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #818cf8, #38bdf8);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.6);
+}
+
+/* Checkboxes */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  user-select: none;
+}
+
+.option-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.option-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.option-item input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #818cf8, #38bdf8);
+  border-color: transparent;
+}
+
+.option-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.option-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* Generate button */
+#generateBtn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #818cf8, #38bdf8);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.4);
+}
+
+#generateBtn:hover {
+  opacity: 0.9;
+  box-shadow: 0 6px 28px rgba(129, 140, 248, 0.55);
+}
+
+#generateBtn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 10px rgba(129, 140, 248, 0.3);
+}
+
+/* Strength indicator */
+.strength-bar {
+  display: flex;
+  gap: 5px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.strength-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-right: 4px;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.strength-segment {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
+}
+
+.strength-segment.weak    { background: #f87171; }
+.strength-segment.fair    { background: #fb923c; }
+.strength-segment.good    { background: #facc15; }
+.strength-segment.strong  { background: #4ade80; }
+
+#strengthText {
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-left: 6px;
+  width: 48px;
+  text-align: right;
+}
